@@ -1,15 +1,17 @@
 var http = require('http');
+var os = require('os');
+//codigo
 
-//CODIGO
+console.log("Sistema operativo: " + os.platform());
+console.log("Version sistema operativo: " + os.release());
+console.log("Memoria total: " + os.totalmem() + " bytes");
+console.log("Memoria libre: " + os.freemem() + " bytes");
 
-console.log("asd");
-
-
-var mensajeParaVisitante = function(peticion, resultado) {
-    resultado.writeHead(200);
-    resultado.end("Mira la consola");
+var mensaje = function(peticion, respuesta) {
+    respuesta.writeHead(200);
+    respuesta.end('Lee la consola');
 }
 
-var servidor = http.createServer(mensajeParaVisitante);
+var servidor = http.createServer(mensaje);
 
 servidor.listen(8080)

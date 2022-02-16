@@ -6,9 +6,13 @@ var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
 
 var q = url.parse(adr, true);
 
-console.log('Camino completo de la ruta: ' + q.path);
-console.log('Camino y recurso: ' + q.pathname);
-console.log('Parametros recurso: ' + q.search);
+var path = q.path;
+var pathname = q.pathname;
+var search = q.search;
+
+console.log('Camino completo de la ruta: ' + path);
+console.log('Camino y recurso: ' + pathname);
+console.log('Parametros recurso: ' + search);
 
 // console.log(q)
 
